@@ -1,0 +1,10 @@
+FROM python:3.9
+
+# Instalando dependências
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Rodando a aplicação
+COPY dados.csv .
+COPY write.py .
+CMD ["python","write.py"]
